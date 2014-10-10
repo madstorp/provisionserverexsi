@@ -26,7 +26,7 @@ SASL_USER = "root"
 def request_cred(credentials, user_data):
     for credential in credentials:
         if credential[0] == libvirt.VIR_CRED_AUTHNAME:
-            credential[4] = SASL_USER
+            credential[4] = user[0]
         elif credential[0] == libvirt.VIR_CRED_PASSPHRASE:
 		 credential[4] = "%s" % (test[0])
     return 0
